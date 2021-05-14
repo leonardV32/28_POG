@@ -8,6 +8,9 @@ public class Platformer_test : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float maxspeed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private Transform RaycastStartTransform;
+
+    private bool canJump = false;
 
     private Controls controls;
 
@@ -30,13 +33,18 @@ public class Platformer_test : MonoBehaviour
 
 
     private void JumpOnperformed(InputAction.CallbackContext obj)
-    {
-        rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+    {   
+        if (canJump)
+        {
+         rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        }
+        
     }
 
     private void MoveOnperformed(InputAction.CallbackContext obj)
     {
         direction = obj.ReadValue<float>();
+        animator.SetBool("Walking", true);
         if (direction > 0)
         {
             spriterenderer.flipX = false;
@@ -49,6 +57,7 @@ public class Platformer_test : MonoBehaviour
 
     private void MoveOncanceled(InputAction.CallbackContext obj)
     {
+        animator.SetBool("Walking", false);
         direction = 0;
     }
     // Start is called before the first frame update
@@ -62,7 +71,17 @@ public class Platformer_test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        var hit = Physics2D.Raycast(RaycastStartTransform.position, new Vector2(0, -1), 0.001f);
+        //Debug.DrawRay(RaycastStartTransform.position, new Vector2(0, -1) * 0.001f);
+        if (hit.collider != null)
+        {
+            canJump = true;
+            //on peut sauter
+        }
+        else
+        {
+            canJump = false;
+        }
     }
 
     private void FixedUpdate()
