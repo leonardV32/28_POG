@@ -12,6 +12,8 @@ public class Platformer_test : MonoBehaviour
 
     private bool canJump = false;
 
+    private GameObject[] basket;
+
     private Controls controls;
 
     private SpriteRenderer spriterenderer;
@@ -66,6 +68,7 @@ public class Platformer_test : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         spriterenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        //basket = new GameObject[];
     }
 
     // Update is called once per frame
