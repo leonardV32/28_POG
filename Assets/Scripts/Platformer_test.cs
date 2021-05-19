@@ -12,7 +12,7 @@ public class Platformer_test : MonoBehaviour
 
     private bool canJump = false;
 
-    private GameObject[] basket;
+    private GameObject[] Basket;
 
     private Controls controls;
 
@@ -96,4 +96,18 @@ public class Platformer_test : MonoBehaviour
         }
 
     }
+
+
+    
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Fruits")
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
+    
+
 }
