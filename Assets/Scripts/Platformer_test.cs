@@ -12,6 +12,8 @@ public class Platformer_test : MonoBehaviour
 
     private bool canJump = false;
 
+    List<GameObject> basket = new List<GameObject>();
+
     private Controls controls;
 
     private SpriteRenderer spriterenderer;
@@ -66,6 +68,7 @@ public class Platformer_test : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         spriterenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        //basket = new GameObject[];
     }
 
     // Update is called once per frame
@@ -93,4 +96,17 @@ public class Platformer_test : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if (collider2D.tag == "Fruits")
+        {   
+
+            basket.Add(GetComponent<Collider2D>().gameObject);
+            Debug.Log(basket);
+            collider2D.gameObject.SetActive(false);
+        }
+    }
+    
+
 }
