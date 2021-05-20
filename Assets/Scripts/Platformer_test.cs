@@ -9,6 +9,7 @@ public class Platformer_test : MonoBehaviour
     [SerializeField] private float maxspeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform RaycastStartTransform;
+    [SerializeField] private GameObject Endtrigger;
 
     private bool canJump = false;
 
@@ -106,6 +107,12 @@ public class Platformer_test : MonoBehaviour
             Debug.Log(basket);
             collider2D.gameObject.SetActive(false);
         }
+
+        if (collider2D.tag == "End") //&& basket.Count(3)
+        {
+            Endtrigger.SetActive(true);
+        }
+            
     }
     
 
