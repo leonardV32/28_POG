@@ -119,8 +119,8 @@ public class Platformer_test : MonoBehaviour
                     break;
                 }
                 // rempli le tableau avec les Fruits
-                //instancie les objets collidé dans les cases créées au préalable
-                //désactive les game object collisionnés
+                //instancie les objets collidï¿½ dans les cases crï¿½ï¿½es au prï¿½alable
+                //dï¿½sactive les game object collisionnï¿½s
                 /*basket.Add(collider2D.gameObject.GetComponent<SpriteRenderer>().sprite);
                 Instantiate(basket[i],Slot[i])
                 collider2D.gameObject.SetActive(false);*/
