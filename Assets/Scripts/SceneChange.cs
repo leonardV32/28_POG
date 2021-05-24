@@ -39,7 +39,7 @@ public class SceneChange : MonoBehaviour
 
     public void ToQuit()
     {
-        SceneManager.LoadScene("Quit");
+        Application.Quit();
     }
 
 }

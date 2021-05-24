@@ -11,6 +11,7 @@ public class Platformer_test : MonoBehaviour
     [SerializeField] private Transform RaycastStartTransform;
     [SerializeField] private GameObject Endtrigger;
     [SerializeField] private FillInventory SlotsUI;
+    [SerializeField] private Transform Spawn;
 
     private bool canJump = false;
 
@@ -132,6 +133,12 @@ public class Platformer_test : MonoBehaviour
         if (collider2D.tag == "End") //&& basket.Count == 3)
         {
             Endtrigger.SetActive(true);
+        }
+
+        if (collider2D.tag == "Death")
+        {
+            rb2D.transform.position = Spawn.position;
+            spriterenderer.flipX = false;
         }
             
     }
