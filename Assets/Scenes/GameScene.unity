@@ -882,8 +882,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1285,10 +1285,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1678,6 +1678,10 @@ PrefabInstance:
     - target: {fileID: 6205386267419124524, guid: f39e9f04cb1d4e440a512a2068ee7320, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205386267419124525, guid: f39e9f04cb1d4e440a512a2068ee7320, type: 3}
+      propertyPath: loadingScreenPrefab
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6205386267419124526, guid: f39e9f04cb1d4e440a512a2068ee7320, type: 3}
       propertyPath: m_Name
@@ -8784,8 +8788,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 61.99994, y: -28.5}
-  m_SizeDelta: {x: 16, y: 16}
+  m_AnchoredPosition: {x: 190, y: -72}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5000005, y: 0.5}
 --- !u!114 &1666393687
 MonoBehaviour:
@@ -8992,8 +8996,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.200012, y: -8.200012}
-  m_SizeDelta: {x: 55, y: 55}
+  m_AnchoredPosition: {x: -43, y: -37}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1838876606
 MonoBehaviour:
@@ -9124,8 +9128,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26, y: -28.5}
-  m_SizeDelta: {x: 16, y: 16}
+  m_AnchoredPosition: {x: 67, y: -72}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5000005, y: 0.5}
 --- !u!114 &1894094370
 MonoBehaviour:
@@ -9765,8 +9769,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100.5, y: -28.5}
-  m_SizeDelta: {x: 16, y: 16}
+  m_AnchoredPosition: {x: 322, y: -70}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5000005, y: 0.5}
 --- !u!1001 &7828037964952045871
 PrefabInstance:
