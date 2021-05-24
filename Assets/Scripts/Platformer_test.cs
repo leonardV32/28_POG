@@ -10,10 +10,15 @@ public class Platformer_test : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform RaycastStartTransform;
     [SerializeField] private GameObject Endtrigger;
+    [SerializeField] private FillInventory SlotsUI;
 
     private bool canJump = false;
 
-    List<GameObject> basket = new List<GameObject>();
+    //List<Sprite> basket = new List<Sprite>();
+    public bool[] isFull;
+    public Sprite[] basket;
+
+    
 
     private Controls controls;
 
@@ -100,15 +105,31 @@ public class Platformer_test : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
+
         if (collider2D.tag == "Fruits")
-        {   
+        {
+            for (int i = 0; i < basket.Length; i++)
+            {
+                if ( isFull[i] == false)
+                {
+                    basket[i] = collider2D.gameObject.GetComponent<SpriteRenderer>().sprite;
+                    isFull[i] = true;
+                    SlotsUI.UpdateInventory(basket);
+                    collider2D.gameObject.SetActive(false);
+                    break;
+                }
+                // rempli le tableau avec les Fruits
+                //instancie les objets collid� dans les cases cr��es au pr�alable
+                //d�sactive les game object collisionn�s
+                /*basket.Add(collider2D.gameObject.GetComponent<SpriteRenderer>().sprite);
+                Instantiate(basket[i],Slot[i])
+                collider2D.gameObject.SetActive(false);*/
 
-            basket.Add(GetComponent<Collider2D>().gameObject);
-            Debug.Log(basket);
-            collider2D.gameObject.SetActive(false);
-        }
+            }
+        }   
+        
 
-        if (collider2D.tag == "End") //&& basket.Count(3)
+        if (collider2D.tag == "End") //&& basket.Count == 3)
         {
             Endtrigger.SetActive(true);
         }
