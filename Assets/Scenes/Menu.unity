@@ -1331,7 +1331,7 @@ PrefabInstance:
     - target: {fileID: 6205386267419124525, guid: f39e9f04cb1d4e440a512a2068ee7320, type: 3}
       propertyPath: loadingScreenPrefab
       value: 
-      objectReference: {fileID: 2712863638607134842, guid: 0a63cb5bd26769f4c9d376cd415dda21, type: 3}
+      objectReference: {fileID: 8761247792727365764, guid: 0a63cb5bd26769f4c9d376cd415dda21, type: 3}
     - target: {fileID: 6205386267419124526, guid: f39e9f04cb1d4e440a512a2068ee7320, type: 3}
       propertyPath: m_Name
       value: SceneContainer
