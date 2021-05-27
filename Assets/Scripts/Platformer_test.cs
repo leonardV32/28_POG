@@ -9,14 +9,15 @@ public class Platformer_test : MonoBehaviour
     [SerializeField] private float maxspeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform RaycastStartTransform;
-    [SerializeField] private GameObject Endtrigger;
-    [SerializeField] private FillInventory SlotsUI;
+    [SerializeField] private GameObject Endtrigger; //le gameobject qui symbolise la limite basse de l'écran.
+    [SerializeField] private FillInventory SlotsUI; //permet d'accéder à la fonction UpdateInventory en ajoutant ce script dans l'editor
+    [SerializeField] private Transform Spawn;
 
     private bool canJump = false;
 
-    //List<Sprite> basket = new List<Sprite>();
-    public bool[] isFull;
-    public Sprite[] basket;
+    
+    public bool[] isFull;   // un boolean pour qualifier les cases du tableau remplie ou non
+    public Sprite[] basket; //l'appel d'un tableau qui va accueillir les sprites 
 
     
 
@@ -106,32 +107,31 @@ public class Platformer_test : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
 
-        if (collider2D.tag == "Fruits")
+        if (collider2D.tag == "Fruits") // vérifie si la collision est avec un gameobjet taggé Fruits
         {
-            for (int i = 0; i < basket.Length; i++)
+            for (int i = 0; i < basket.Length; i++) //declenche une boucle for de la longueur du tableau dans lequel on va stocker les sprites des gameobjects récupérés.
             {
-                if ( isFull[i] == false)
+                if ( isFull[i] == false) //vérifie si le tableau est rempli pour cette valeur de i
                 {
-                    basket[i] = collider2D.gameObject.GetComponent<SpriteRenderer>().sprite;
-                    isFull[i] = true;
-                    SlotsUI.UpdateInventory(basket);
-                    collider2D.gameObject.SetActive(false);
-                    break;
+                    basket[i] = collider2D.gameObject.GetComponent<SpriteRenderer>().sprite; // rempli le tableau avec les gameobjects avec lesquelles il y a collision
+                    isFull[i] = true; //indique que le tableau est rempli pour cette valeur de i
+                    SlotsUI.UpdateInventory(basket); //lance la fonction UpdateInventory() dans le script FillInventory
+                    collider2D.gameObject.SetActive(false); //d�sactive le game object collisionné
+                    break; //arrête la fonction pour éviter le remplissage de chaque case du tableau.
                 }
-                // rempli le tableau avec les Fruits
-                //instancie les objets collid� dans les cases cr��es au pr�alable
-                //d�sactive les game object collisionn�s
-                /*basket.Add(collider2D.gameObject.GetComponent<SpriteRenderer>().sprite);
-                Instantiate(basket[i],Slot[i])
-                collider2D.gameObject.SetActive(false);*/
-
             }
         }   
         
 
         if (collider2D.tag == "End") //&& basket.Count == 3)
         {
-            Endtrigger.SetActive(true);
+            Endtrigger.SetActive(true); // affiche le panneau de fin du jeu
+        }
+
+        if (collider2D.tag == "Death") // permet de collisionner avec un objet vide si le personnage tombe en dehors des plateformes.
+        {
+            rb2D.transform.position = Spawn.position;// replace le personnage au niveau du spawn du niveau 
+            spriterenderer.flipX = false; // reset le personnage en position initiale.
         }
             
     }
