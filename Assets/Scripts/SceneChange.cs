@@ -23,7 +23,7 @@ public class SceneChange : MonoBehaviour
             if (sceneLoading.progress >= 0.9f) //chargement dans unity est à 90% le rest c'est l'affichage sur le screen
             {
                 sceneLoading.allowSceneActivation = true; //réautorise l'affichage de la scène game.
-                prefab.GetComponent<Animator>().SetTrigger("Disappear");
+                prefab.SetActive(false);
             }
             yield return new WaitForSeconds(1);
         }
