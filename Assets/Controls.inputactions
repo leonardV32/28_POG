@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "46e6ca76-7a70-4bae-8e8c-4717ae13b442",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 },
@@ -37,7 +37,7 @@
                 {
                     "name": "negative",
                     "id": "a1c4cfa5-76f9-4d59-bebf-c3079d2fe302",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -48,7 +48,7 @@
                 {
                     "name": "positive",
                     "id": "4c72aeae-4e33-48b8-8551-e99c81fd9547",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
