@@ -9,8 +9,8 @@ public class PlayerAnimationController : MonoBehaviour
 	private Rigidbody2D rb2D;
 	private SpriteRenderer spriterenderer;
 
-	public GameObject Left_light;
-	public GameObject Right_light;
+	public GameObject LeftLight;
+	public GameObject RightLight;
         
 
 
@@ -23,10 +23,8 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Start()
     {
-        Left_light = GameObject.FindWithTag("Light_left");
-        Right_light = GameObject.FindWithTag("Light_right");
-        Left_light.SetActive(false);
-        Right_light.SetActive(true);
+        LeftLight.SetActive(false);
+        RightLight.SetActive(true);
     }
 
     public void OnMove(float direction)
@@ -34,8 +32,8 @@ public class PlayerAnimationController : MonoBehaviour
         var isFacingRight = direction >= 0;
         animator.SetFloat("Speed", rb2D.velocity.x);
         spriterenderer.flipX = !isFacingRight;
-        Left_light.SetActive(!isFacingRight);
-        Right_light.SetActive(isFacingRight);
+        LeftLight.SetActive(!isFacingRight);
+        RightLight.SetActive(isFacingRight);
              
     }
     
