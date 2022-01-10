@@ -10,6 +10,7 @@ public class End : CollisionManager
 	{
 		if (collidedWith.tag == "Player") //&& basket.Count == 3)
 		{
+			Time.timeScale = 0;
 			Endtrigger.SetActive(true); // affiche le panneau de fin du jeu
 		}
 	}

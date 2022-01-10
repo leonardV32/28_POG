@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Fruit_Collision : MonoBehaviour
 {
-    [SerializeField] private FillInventory SlotsUI;
+    [SerializeField] private FillInventory fillInventory;
     public bool[] isFull;
     public Sprite[] basket;
     
-   
-     
-    public void OnTriggerEnter(Collider2D collider2D)
-    {   
+   /*Pour ton FillInventory, je rajouterais une fonction AddToInventory 
+   qui prendrait en paramètre un seul sprite qui s’ajouterait à la fin du tableau. 
+   Comme ça tu n’aurais la variable basket dans FillInventory au lieu Fruit_Collision, ce qui fait plus de sens. 
+   Cela te permettrait aussi de déporter la boucle for de Fruit_Collision à FillInventory.
+
+    Dans SceneChange, je rajouterais un paramètre à la fonction LoadSceneAsync de type string 
+    afin de charger la scène qu’on veut et pas juste GameScene avec ce script
+    */
+    private void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        var player = collider2D.GetComponent<FillInventory>();
+        if (player is null) return;
+        var sprite = GetComponent<SpriteRenderer>().sprite;
+        player.AddToInventory();
+        gameObject.SetActive(false);
 
 
         /*//INventaire
@@ -22,7 +33,7 @@ public class Fruit_Collision : MonoBehaviour
                 {
                     basket[i] = this.gameObject.GetComponent<SpriteRenderer>().sprite; // rempli le tableau avec les gameobjects avec lesquelles il y a collision
                     isFull[i] = true; //indique que le tableau est rempli pour cette valeur de i
-                    SlotsUI.UpdateInventory(basket); //lance la fonction UpdateInventory() dans le script FillInventory
+                    filInventory.UpdateInventory(basket); //lance la fonction UpdateInventory() dans le script FillInventory
                     this.gameObject.SetActive(false); //d�sactive le game object collisionné
                     break; //arrête la fonction pour éviter le remplissage de chaque case du tableau.
                 }
