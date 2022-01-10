@@ -16,7 +16,6 @@ public class PlayerMove : Move2D
         if (horizontalSpeed < maxspeed)
         {
             rb2D.AddForce(new Vector2(speed * direction, 0));
-            //Debug.Log("Move");
             Debug.Log(direction);
         }
     }

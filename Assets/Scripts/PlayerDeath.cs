@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerDeath : CollisionManager
+public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] private Transform Spawn;
-    
-   
 
-    public override void Colliding(Collider2D collidedWith)
+    private Rigidbody2D rb2D;
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
     {
-        if (collidedWith.tag == "Death") // permet de collisionner avec un objet vide si le personnage tombe en dehors des plateformes.
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Death") // permet de collisionner avec un objet vide si le personnage tombe en dehors des plateformes.
         {
             rb2D.transform.position = Spawn.position;// replace le personnage au niveau du spawn du niveau 
             spriteRenderer.flipX = false; // reset le personnage en position initiale.

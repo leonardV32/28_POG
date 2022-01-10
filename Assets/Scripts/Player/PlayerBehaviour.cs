@@ -13,9 +13,17 @@ public class PlayerBehaviour : MonoBehaviour
     // 1 pour les anims
     private PlayerAnimationController animations;
     // 1 pour les collisions
-    private CollisionManager collision;
+    //private CollisionManager collision;
     // 1 pour les
     protected float direction;
+
+    void Awake()
+    {
+        move = GetComponent<PlayerMove>();
+        animations = GetComponent<PlayerAnimationController>();
+        jump = GetComponent<PlayerJump>();
+        
+    }
 
 
     public void OnMove(InputAction.CallbackContext obj)
@@ -35,13 +43,7 @@ public class PlayerBehaviour : MonoBehaviour
         jump.Jump();
     }
     // Start is called before the first frame update
-    void Awake()
-    {
-        move = GetComponent<PlayerMove>();
-        animations = GetComponent<PlayerAnimationController>();
-        jump = GetComponent<PlayerJump>();
-        collision = GetComponent<CollisionManager>();
-    }
+    
 
     // Update is called once per frame
     void FixedUpdate()
