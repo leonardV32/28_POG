@@ -119,7 +119,7 @@ public class Platformer_test : MonoBehaviour
             rb2D.AddForce(new Vector2(speed * direction, 0));
         }
 
-    }*/
+    }
 
     //Collision 
     private void OnTriggerEnter2D(Collider2D collider2D)
@@ -152,7 +152,7 @@ public class Platformer_test : MonoBehaviour
             spriterenderer.flipX = false; // reset le personnage en position initiale.
         }
             
-    }
+    }*/
     
 
 }

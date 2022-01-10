@@ -7,7 +7,14 @@ public class FillInventory : MonoBehaviour
 {
     [SerializeField] public GameObject[] slots; //créer un tableau de gameobject dans lequel on mets les éléments d'UI qui représente l'inventaire
     public Sprite sprite;
-    public void UpdateInventory(Sprite[] spriteList) // une fonction qui prend un tableau de sprite en paramètre, permet de récupérer les informations du tableau basket du script Platformer_test 
+    public Sprite[] basket;
+    public bool[] isFull;
+    public GameObject inventorySlots;
+    //private GameObject slot0;
+    //private GameObject slot1;
+    //private GameObject slot2;
+
+    /*public void UpdateInventory(Sprite[] spriteList) // une fonction qui prend un tableau de sprite en paramètre, permet de récupérer les informations du tableau basket du script Platformer_test 
     {
         for (int i = 0; i < spriteList.Length; i++) //declenche une boucle for de la longueur du tableau basket 
         {
@@ -18,19 +25,36 @@ public class FillInventory : MonoBehaviour
             }
             
         }
+    }*/
+
+    public void AddToInventory(Sprite sprite)
+    {
+        for (int i = 0; i < basket.Length; i++)
+        {
+            if (isFull[i] == false)
+            {
+                basket[i] = sprite;
+                isFull[i] = true;
+                break;
+            }
+        }
     }
 
-    public void AddToInventory()
+    public void RefreshUI(Sprite[] basket)
     {
-        Debug.Log("Added");
+        for (int i = 0; i < 3; i++)
+        {
+            inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = basket[i];
+            inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().color = Color.white;
+        }
     }
-    /*
-     * if (isFull[i] == false) //vérifie si le tableau est rempli pour cette valeur de i
-                {
-                    basket[i] = this.gameObject.GetComponent<SpriteRenderer>().sprite; // rempli le tableau avec les gameobjects avec lesquelles il y a collision
-                    isFull[i] = true; //indique que le tableau est rempli pour cette valeur de i
-                    filInventory.UpdateInventory(basket); //lance la fonction UpdateInventory() dans le script FillInventory
-                    this.gameObject.SetActive(false); //d?sactive le game object collisionné
-                    break; //arrête la fonction pour éviter le remplissage de chaque case du tableau.
-                }*/
+        
+        //slot0 = inventorySlots.transform.GetChild(0).gameObject;
+        //slot1 = inventorySlots.transform.GetChild(1).gameObject;
+        //slot2 = inventorySlots.transform.GetChild(2).gameObject;
+
+
+       
 }
+    
+

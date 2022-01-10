@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 4815834904234173463}
   - component: {fileID: 4815834904234173464}
   - component: {fileID: 4815834904234173468}
-  - component: {fileID: 4815834904234173471}
   - component: {fileID: 4815834904234173472}
   - component: {fileID: 6986038985690465409}
   m_Layer: 0
@@ -355,7 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 3
-  canJump: 0
 --- !u!114 &4815834904234173464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,21 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79de32093236a1e42857ecc545290564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4815834904234173471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4815834903160344173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a9385e092349047bf6b552f32cd327, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SlotsUI: {fileID: 4815834904234173472}
-  isFull: 
-  basket: []
 --- !u!114 &4815834904234173472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +395,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!114 &6986038985690465409
 MonoBehaviour:
   m_ObjectHideFlags: 0
