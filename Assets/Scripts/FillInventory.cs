@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class FillInventory : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class FillInventory : MonoBehaviour
     public Sprite[] basket;
     public bool[] isFull;
     public GameObject inventorySlots;
+
+    public UnityEvent spriteAdded;
     //private GameObject slot0;
     //private GameObject slot1;
     //private GameObject slot2;
@@ -28,19 +31,23 @@ public class FillInventory : MonoBehaviour
     }*/
 
     public void AddToInventory(Sprite sprite)
-    {
+    {   
         for (int i = 0; i < basket.Length; i++)
         {
+            
             if (isFull[i] == false)
             {
+                Debug.Log("marche");
                 basket[i] = sprite;
                 isFull[i] = true;
+                spriteAdded.Invoke();
                 break;
+
             }
         }
     }
 
-    public void RefreshUI(Sprite[] basket)
+    public void RefreshUI()
     {
         for (int i = 0; i < 3; i++)
         {
