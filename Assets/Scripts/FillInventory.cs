@@ -50,9 +50,12 @@ public class FillInventory : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = basket[i];
-            inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().color = Color.white;
-            //break;
+            if (isFull[i])
+            {
+                inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = basket[i];
+                inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().color = Color.white;
+                break;
+            }
         }
     }
         
