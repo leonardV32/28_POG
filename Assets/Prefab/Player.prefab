@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4815834902947558720}
   - component: {fileID: 4815834902947558721}
   m_Layer: 0
-  m_Name: light_right
-  m_TagString: Light_right
+  m_Name: LightRight
+  m_TagString: LightRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 4815834904234173468}
   - component: {fileID: 4815834904234173472}
   - component: {fileID: 6986038985690465409}
+  - component: {fileID: 1429383170}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -391,11 +392,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75f70baba33c514ca6b7f4f035f5d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots:
+  basket:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  sprite: {fileID: 0}
+  isFull: 000000
+  inventorySlots: {fileID: 0}
+  spriteAdded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6ed96adbe23442243ad7eaade6a6f82f, type: 2}
+        m_TargetAssemblyTypeName: GameEventGeneric, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6986038985690465409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +426,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RaycastStartTransform: {fileID: 4815834903890879384}
+--- !u!114 &1429383170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4815834903160344173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2712d2b7ebbe024eba96291374f4e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 6ed96adbe23442243ad7eaade6a6f82f, type: 2}
+  gameEventCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4815834904234173472}
+        m_TargetAssemblyTypeName: FillInventory, Assembly-CSharp
+        m_MethodName: RefreshUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4815834903251836669
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,8 +465,8 @@ GameObject:
   - component: {fileID: 4815834903251836642}
   - component: {fileID: 4815834903251836643}
   m_Layer: 0
-  m_Name: light_left
-  m_TagString: Light_left
+  m_Name: LightLeft
+  m_TagString: LightLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

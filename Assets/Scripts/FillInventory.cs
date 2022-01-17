@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class FillInventory : MonoBehaviour
 {
-    [SerializeField] public GameObject[] slots; //créer un tableau de gameobject dans lequel on mets les éléments d'UI qui représente l'inventaire
-    public Sprite sprite;
+    //[SerializeField] public GameObject[] slots; //créer un tableau de gameobject dans lequel on mets les éléments d'UI qui représente l'inventaire
+    private Sprite sprite;
     public Sprite[] basket;
     public bool[] isFull;
     public GameObject inventorySlots;
@@ -34,10 +34,9 @@ public class FillInventory : MonoBehaviour
     {   
         for (int i = 0; i < basket.Length; i++)
         {
-            
+            //print("I = null");
             if (isFull[i] == false)
             {
-                Debug.Log("marche");
                 basket[i] = sprite;
                 isFull[i] = true;
                 spriteAdded.Invoke();
@@ -53,6 +52,7 @@ public class FillInventory : MonoBehaviour
         {
             inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = basket[i];
             inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().color = Color.white;
+            //break;
         }
     }
         

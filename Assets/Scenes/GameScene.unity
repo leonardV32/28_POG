@@ -1609,14 +1609,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75f70baba33c514ca6b7f4f035f5d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots:
-  - {fileID: 1894094368}
-  - {fileID: 1666393685}
-  - {fileID: 2090910336}
-  sprite: {fileID: 0}
-  basket: []
-  isFull: 
-  inventorySlots: {fileID: 0}
+  basket:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isFull: 000000
+  inventorySlots: {fileID: 678123731}
   spriteAdded:
     m_PersistentCalls:
       m_Calls: []
@@ -8846,50 +8844,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1429383169 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4815834903160344173, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-  m_PrefabInstance: {fileID: 4815834904234173458}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1429383170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429383169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2712d2b7ebbe024eba96291374f4e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 6ed96adbe23442243ad7eaade6a6f82f, type: 2}
-  gameEventCallback:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1429383172}
-        m_TargetAssemblyTypeName: FillInventory, Assembly-CSharp
-        m_MethodName: RefreshUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1429383172 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-  m_PrefabInstance: {fileID: 4815834904234173458}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429383169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75f70baba33c514ca6b7f4f035f5d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1524837483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2657450649411582566, guid: 5a899752244880848b6b80a59c0b9cfa, type: 3}
@@ -10318,25 +10272,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4815834902947558723, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: m_Name
-      value: LightRight
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815834902947558723, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: m_TagString
-      value: LightRight
-      objectReference: {fileID: 0}
     - target: {fileID: 4815834903160344173, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815834903251836669, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: m_Name
-      value: LightLeft
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815834903251836669, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: m_TagString
-      value: LightLeft
       objectReference: {fileID: 0}
     - target: {fileID: 4815834903429839084, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
       propertyPath: m_RootOrder
@@ -10387,45 +10325,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 388388295}
     - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: slots.Array.data[0]
+      propertyPath: inventorySlots
       value: 
-      objectReference: {fileID: 1894094368}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: slots.Array.data[1]
-      value: 
-      objectReference: {fileID: 1666393685}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: slots.Array.data[2]
-      value: 
-      objectReference: {fileID: 2090910336}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: spriteAdded.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: spriteAdded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: spriteAdded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ed96adbe23442243ad7eaade6a6f82f, type: 2}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: spriteAdded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: spriteAdded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Raise
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: spriteAdded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameEventGeneric, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815834904234173472, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
-      propertyPath: spriteAdded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 678123731}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4682b277d88be47a030642d0cf7e6d, type: 3}
 --- !u!1001 &8957718364461829073

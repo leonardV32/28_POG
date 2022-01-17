@@ -25,6 +25,7 @@ public class NewFruitCollision : MonoBehaviour
             if (player is null) return;
             var sprite = GetComponent<SpriteRenderer>().sprite;
             player.AddToInventory(sprite);
+            //print("ItemAdded");
             gameObject.SetActive(false);
         }
 
