@@ -54,7 +54,7 @@ public class FillInventory : MonoBehaviour
             {
                 inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = basket[i];
                 inventorySlots.transform.GetChild(i).gameObject.GetComponent<Image>().color = Color.white;
-                break;
+                //break;
             }
         }
     }
