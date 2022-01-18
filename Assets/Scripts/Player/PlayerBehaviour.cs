@@ -28,9 +28,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext obj)
     {
+        direction = obj.ReadValue<float>();
         if (!obj.performed)
             return;
-        direction = obj.ReadValue<float>();
         //Debug.Log( "Behaviour");
         //Debug.Log( direction);
         animations.OnMove(direction);
